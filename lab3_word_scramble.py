@@ -15,6 +15,26 @@ class WordScramble:
         print("The user input was: ", self.user_input)
 
         # first scramble is just one word
+        list_input = self.user_input.split()
+        i = 0
+        while i < len(list_input):
+            word = list(list_input[i])
+            if len(word) > 2:
+                index_1 = 1
+                index_2 = 2
+                temp = word[1]
+                while index_2 <= len(word)-2:
+                    word[index_1] = word[index_2]
+                    word[index_2] = temp
+                    index_2 += 2
+                    index_1 += 2
+                    temp = word[index_1]
+            list_input[i] = ''.join(word)
+            i += 1
+        self.user_input = ' '.join(list_input)
+
+        print("The scramble input is: ", self.user_input)
+
         # reverse two indices
         # particularly good to use is to switch the first two
         # and the last two
