@@ -104,7 +104,7 @@ class CardGame(Frame):
             self.update_score(new_card)
 
             self.Score_label.config(text="Your score: " + str(self.player_score), justify=LEFT)
-            self.Score_label.pack()
+            # self.Score_label.pack()
             the_card = PhotoImage(file='cards/' + new_card + '.gif')
             self.open_card.config(image=the_card)
             self.open_card.grid(row=0, column=0, padx=2, pady=2)
